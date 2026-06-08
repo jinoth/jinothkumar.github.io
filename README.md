@@ -3,13 +3,15 @@
 > Personal portfolio website showcasing my data science projects, technical skills, and professional experience.
 
 [![GitHub](https://img.shields.io/badge/github-portfolio-blue)](https://github.com/jinoth)
+<!-- LinkedIn badge temporarily hidden
 [![LinkedIn](https://img.shields.io/badge/linkedin-connect-0077B5)](https://www.linkedin.com/in/jinothkumar)
+-->
 
 ---
 
 ## 🚀 About Me
 
-Data Scientist with 4+ years of professional experience specializing in big data engineering and location analytics. Expert in PySpark, AWS EMR, Databricks, and distributed computing for processing terabytes of GPS data. Currently at **KDDI Corporation** developing segmentation algorithms and targeting logic for location-based intelligence across multiple enterprise clients including retail, transportation, and manufacturing sectors.
+Data Scientist with 4+ years of professional experience specializing in big data engineering and location analytics. Expert in PySpark, AWS EMR, Databricks, and distributed computing for processing terabytes of GPS data. Currently at a **major Japanese telecom** developing segmentation algorithms and targeting logic for location-based intelligence across multiple enterprise clients including retail, transportation, and manufacturing sectors.
 
 **Key Expertise:**
 - Large-scale Data Engineering with Databricks, AWS EMR, and PySpark
@@ -27,10 +29,10 @@ Data Scientist with 4+ years of professional experience specializing in big data
 
 ## 💼 Featured Projects
 
-### 🏥 Healthcare Analytics & Location-Based Advertising Intelligence - KDDI Corporation
+### 🏥 Healthcare Analytics & Location-Based Advertising Intelligence - Major Japanese Telecom
 **Period:** 2024.04 - Present (21 months)  
 **Role:** Data Analyst - Platform Business Division, Data Science Group (DSG)  
-**Technologies:** PySpark, Apache Spark, AWS EMR, Databricks, Python, SQL, Tableau, Tableau Prep, AWS EC2, AWS S3, KDDI Location Analyzer (KLA)
+**Technologies:** PySpark, Apache Spark, AWS EMR, Databricks, Python, SQL, Tableau, Tableau Prep, AWS EC2, AWS S3, Location Analyzer (KLA)
 
 **Key Achievements:**
 - Built PySpark pipelines on AWS EMR and Databricks processing terabytes of GPS data from au devices for multiple clients (jeki, NewDays, Hitachi Seisakusho)
@@ -110,7 +112,9 @@ Data Scientist with 4+ years of professional experience specializing in big data
 
 - **Location:** Tokyo, Japan 🇯🇵
 - **Email:** [jinoth2112@gmail.com](mailto:jinoth2112@gmail.com)
+<!-- LinkedIn temporarily hidden
 - **LinkedIn:** [linkedin.com/in/jinothkumar](https://www.linkedin.com/in/jinothkumar)
+-->
 - **GitHub:** [github.com/jinoth](https://github.com/jinoth)
 - **Languages:** Japanese (JLPT N2 - Listening: 100% | Pursuing N1), English (Professional Working Proficiency)
 
@@ -148,7 +152,7 @@ Built with:
 
 - **Jan 2025** - Portfolio website launched
 - **Dec 2024** - Achieved JLPT N2 certification
-- **Apr 2024** - Started at KDDI Corporation
+- **Apr 2024** - Started at a major Japanese telecom
 
 ---
 
