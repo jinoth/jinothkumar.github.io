@@ -23,7 +23,7 @@ Data Scientist with 4+ years of professional experience specializing in big data
 - Rapid Learning and Practical Application of New Cloud Technologies and Tools
 
 **Location:** Tokyo, Japan 🇯🇵  
-**Languages:** Japanese (JLPT N2 - Listening: 100% | Pursuing N1), English (Professional Working Proficiency)
+**Languages:** Japanese (JLPT N2 - Listening: 100% | Pursuing N1), English (TOEIC 800 | Professional Working Proficiency)
 
 ---
 
@@ -93,6 +93,7 @@ Data Scientist with 4+ years of professional experience specializing in big data
 
 ## 🎓 Certifications
 
+- **TOEIC Listening & Reading: 800** (L 425 / R 375) (January 2026)
 - **AWS Certified Cloud Practitioner** (May 2023)
 - **Japanese Language Proficiency Test JLPT N2** (December 2024)
 - **Japanese Language Proficiency Test JLPT N3** (December 2020)
@@ -116,7 +117,7 @@ Data Scientist with 4+ years of professional experience specializing in big data
 - **LinkedIn:** [linkedin.com/in/jinothkumar](https://www.linkedin.com/in/jinothkumar)
 -->
 - **GitHub:** [github.com/jinoth](https://github.com/jinoth)
-- **Languages:** Japanese (JLPT N2 - Listening: 100% | Pursuing N1), English (Professional Working Proficiency)
+- **Languages:** Japanese (JLPT N2 - Listening: 100% | Pursuing N1), English (TOEIC 800 | Professional Working Proficiency)
 
 ### Contact Form
 
@@ -151,6 +152,7 @@ Built with:
 
 ## 🔄 Updates
 
+- **Jan 2026** - Achieved TOEIC Listening & Reading score of 800
 - **Jan 2025** - Portfolio website launched
 - **Dec 2024** - Achieved JLPT N2 certification
 - **Apr 2024** - Started at a major Japanese telecom
