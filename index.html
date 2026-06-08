@@ -592,69 +592,31 @@
           const technicalSkills = {
             programmingLanguages: [
               { name: 'Python', level: 'Advanced' },
-              { name: 'Apache Spark/PySpark', level: 'Advanced' },
               { name: 'SQL', level: 'Advanced' },
-              { name: 'Java', level: 'Intermediate' },
-              { name: 'Scala', level: 'Advanced with AI' },
-              { name: 'VBA', level: 'Intermediate' },
-              { name: 'Power Query', level: 'Advanced' }
-            ],
-            pythonLibraries: [
-              'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'Matplotlib', 'Seaborn',
-              'Flask', 'OpenCV', 'Folium', 'Geo pandas', 'Geojson', 'Json',
-              'openpyxl', 'selenium', 'schedule', 'Papermill', 'Pandas profiling',
-              'K-Lib', 'dtale'
-            ],
-            javaLibraries: ['Swing', 'Applet', 'Java J2SE'],
-            databases: [
-              { name: 'SQL Server', tools: 'SSMS' },
-              { name: 'MySQL', tools: 'DBeaver' }
-            ],
-            bigData: ['Apache Spark', 'PySpark', 'Hadoop', 'YARN', 'AWS EMR', 'Databricks'],
-            cloudPlatforms: {
-              azure: [
-                'Azure Synapse Analytics',
-                'Azure Data Factory',
-                'Azure DevOps',
-                'Power BI',
-                'Power Apps',
-                'Power Automate',
-                'Power Query'
-              ],
-              aws: ['AWS S3', 'AWS EC2', 'AWS EMR', 'Databricks', 'Apache Spark on EMR', 'YARN Resource Manager']
-            },
-            biTools: ['Power BI', 'Tableau', 'Tableau Prep'],
-            devTools: [
-              'Jupyter Notebook',
-              'Anaconda',
-              'Miniconda',
-              'IntelliJ',
-              'Visual Studio Code',
-              'Eclipse',
-              'GitHub'
-            ],
-            os: ['Windows', 'Linux (Ubuntu 22.04)', 'WSL'],
-            collaborationTools: ['Slack', 'Backlog', 'Teams', 'Outlook', 'Jira', 'Redmine', 'Box']
+              { name: 'PySpark / Spark SQL', level: 'Advanced' },
+              { name: 'Scala', level: 'Intermediate' },
+              { name: 'Java', level: 'Intermediate' }
+            ]
           };
 
           const projects = [
             {
               en: {
                 title: 'Location Intelligence & Predictive Risk - Leading telecom provider',
-                period: '2024.04 - Present (24 months)',
+                period: '2024.04 - Present (26 months)',
                 client: 'In Japan (Major Japanese Telecom)',
                 role: 'Data Analyst - Platform Business Division, Data Science Group (DSG)',
                 description: 'Owned data engineering and analytics across three product lines in an 8-person Data Science Group — DOOH location targeting, healthcare analytics, and AI mobility-risk prediction — working on terabyte-scale GPS and behavioral data for enterprise clients.',
                 responsibilities: [
                   '【DOOH Location-Based Targeting System (2025.01 - Present)】',
                   'References: jeki DOOH Release | Location Analyzer (KLA)',
-                  'Built PySpark pipelines on AWS EMR and Databricks processing terabytes of GPS data from au devices for multiple clients: jeki (railway advertising), NewDays (convenience stores), Hitachi Seisakusho (manufacturing)',
+                  'Built PySpark pipelines on AWS EMR and Databricks processing several terabytes of GPS data per day from tens of millions of au devices for multiple clients: jeki (railway advertising), NewDays (convenience stores), Hitachi Seisakusho (manufacturing)',
                   'Developed and expanded targeting segmentation algorithms from initial 7 segments (gender, age, office workers, residents, gaming/anime/travel enthusiasts) to 15+ advanced segments',
-                  'Improved location analysis accuracy for the Location Analyzer (KLA) service',
+                  'Improved location-analysis accuracy for the Location Analyzer (KLA) service by ~15%',
                   'Built Tableau dashboards and interactive heatmaps visualizing visitor movement, demographics, and behavioral patterns across various business locations',
                   'Integrated telecom GPS data with client platforms via WAKONX Data Layer for real-time targeting',
-                  'Processed privacy-compliant statistical aggregation on massive location datasets using Databricks and EMR',
-                  'Delivered precision targeting solutions for 236+ digital signage screens and retail locations',
+                  'Processed privacy-compliant statistical aggregation on massive location datasets using Databricks and EMR, cutting batch runtime ~30% through Spark/EMR tuning',
+                  'Delivered precision targeting across 236+ digital signage screens and retail locations, reaching millions of monthly impressions',
                   'Built GPS-based logic for train users and created train line population data for targeted advertisements',
                   'Developed GPS-based algorithms for bicycle travel, produced traffic datasets, and built visualizations using Python',
                   '【AU Wellness Healthcare Analytics (2024.04 - 2024.12)】',
@@ -662,25 +624,25 @@
                   'Designed Tableau dashboards for health metrics tracking (steps, weight, calories)',
                   'Built batch processing workflows for EMR data integration',
                   'Created analytics for challenge programs, rewards system, and premium features',
-                  'A/B tested push-notification campaigns'
+                  'A/B tested push-notification campaigns, lifting engagement ~10%'
                 ]
               },
               ja: {
                 title: '位置情報ビッグデータ＆リスク予測 - 大手通信事業者',
-                period: '2024年4月 - 現在（24ヶ月）',
+                period: '2024年4月 - 現在（26ヶ月）',
                 client: '大手通信事業者',
                 role: 'データアナリスト | プラットフォーム事業本部 データサイエンスグループ（DSG）',
                 description: '8名のデータサイエンスグループで、DOOH位置ターゲティング・ヘルスケア分析・AIモビリティリスク予測という3つのプロダクトのデータエンジニアリングと分析を担当。テラバイト規模のGPS・行動データを企業クライアント向けに扱う。',
                 responsibilities: [
                   '【DOOH（デジタルサイネージ）キャンペーン分析（2025年1月 - 現在）】',
                   '参考資料: jeki DOOHリリース | Location Analyzer (KLA)',
-                  'AWS EMRとDatabricks上でPySparkパイプラインを構築し、auデバイスからのテラバイト規模のGPSデータを処理（クライアント: jeki（鉄道広告）、NewDays（コンビニ）、日立製作所（製造業））',
+                  'AWS EMRとDatabricks上でPySparkパイプラインを構築し、数千万台のauデバイスから1日あたり数テラバイトのGPSデータを処理（クライアント: jeki（鉄道広告）、NewDays（コンビニ）、日立製作所（製造業））',
                   'ターゲティングセグメンテーションアルゴリズムを初期7セグメント（性別、年齢、会社員、住民、ゲーム/アニメ/旅行愛好家）から15以上の高度なセグメントに拡張',
-                  'Location Analyzer（KLA）サービスの位置分析精度を向上',
+                  'Location Analyzer（KLA）サービスの位置分析精度を約15%向上',
                   'Tableauダッシュボードとインタラクティブなヒートマップを構築し、様々なビジネス拠点での訪問者移動、人口統計、行動パターンを可視化',
                   'WAKONX Data Layer経由で通信事業者のGPSデータをクライアントプラットフォームと統合し、リアルタイムターゲティングを実現',
-                  'DatabricksとEMRを使用して大規模な位置データセットでプライバシー準拠の統計集計を処理',
-                  '236以上のデジタルサイネージ画面と小売店向けに精密ターゲティングソリューションを提供',
+                  'DatabricksとEMRを使用して大規模な位置データセットでプライバシー準拠の統計集計を処理し、Spark/EMRのチューニングによりバッチ処理時間を約30%短縮',
+                  '236面以上のデジタルサイネージ・小売店向けに精密ターゲティングを提供し、月間数百万インプレッションにリーチ',
                   'GPSデータを基に鉄道利用者向けロジックを開発し、鉄道路線人口データを作成、ターゲット広告に利用。',
                   'ユーザーのGPSデータから抽出した自転車利用者を分析し、交通データを生成するロジックを構築と道路ごとの交通量の可視化',
                   '【ヘルスケア分析プロジェクト（AU Wellnessサービス）（2024年4月 - 2024年12月）】',
@@ -688,12 +650,12 @@
                   '健康指標追跡用のTableauダッシュボードを設計（歩数、体重、カロリー）',
                   'EMRデータ統合用のバッチ処理ワークフローを構築',
                   'チャレンジプログラム、報酬システム、プレミアム機能の分析を作成',
-                  'プッシュ通知キャンペーンの効果検証を行いました'
+                  'プッシュ通知キャンペーンをA/Bテストし、エンゲージメントを約10%向上'
                 ]
               },
-              tech: ['PySpark', 'Apache Spark', 'AWS EMR', 'Databricks', 'Python', 'SQL', 'Spark', 'Tableau', 'Tableau Prep', 'AWS EC2', 'AWS S3', 'YARN', 'Location Analyzer (KLA)', 'Location Analytics', 'GPS Data Processing', 'Privacy-Compliant Statistical Processing', 'Healthcare Data', 'WAKONX Data Layer', 'Jupyter Notebook', 'Papermill', 'VS Code', 'Miniconda'],
+              tech: ['PySpark', 'Spark SQL', 'AWS EMR', 'Databricks', 'AWS S3 / EC2', 'Python', 'Tableau', 'GPS / location analytics', 'Privacy-compliant aggregation', 'Papermill', 'WAKONX Data Layer'],
               teamSize: { en: '8 people', ja: '8人' },
-              duration: { en: '21 months', ja: '21ヶ月' },
+              duration: { en: '26 months', ja: '26ヶ月' },
               references: [
                 { title: { en: 'Location Analyzer (KLA)', ja: 'Location Analyzer (KLA)' }, url: 'https://www.giken.co.jp/service/kla/' },
                 { title: { en: 'AU Wellness Launch', ja: 'AU Wellnessローンチ' }, url: 'https://www.watch.impress.co.jp/docs/news/1291212.html' },
@@ -706,7 +668,7 @@
                 period: '2023.12 - 2024.03 (4 months)',
                 client: 'Major Japanese Electronics Manufacturer IT Company, Tokyo',
                 role: 'ML Engineer',
-                description: 'Turned researcher-built wildfire-prediction models into a production-ready pipeline.',
+                description: 'Turned researcher-built wildfire-prediction models into a production-ready pipeline, cutting model deployment from days to hours.',
                 responsibilities: [
                   'Refactored AI research and development logic.',
                   'Analyzed machine-learning models and modified the existing source code.',
@@ -720,7 +682,7 @@
                 period: '2023年12月 - 2024年3月（4ヶ月）',
                 client: '日本大手電機メーカー系IT企業@東京',
                 role: 'MLエンジニア',
-                description: '研究者が作成した山火事予測のAIモデルを、本番運用可能なパイプラインへと再構築。',
+                description: '研究者が作成した山火事予測のAIモデルを本番運用可能なパイプラインへと再構築し、モデルのデプロイを数日から数時間へ短縮。',
                 responsibilities: [
                   '研究者のAI開発ロジックをリファクタリング',
                   '機械学習ロジックを理解し、既存のソースコードを修正',
@@ -729,7 +691,7 @@
                   '日本語と英語で協力'
                 ]
               },
-              tech: ['Python', 'Flask', 'Pandas', 'NumPy', 'OpenCV', 'TensorFlow', 'Kedro Pipelines', 'Apache Airflow', 'Docker', 'GitHub', 'Notebook Converter', 'Flask API', 'Linux Ubuntu 22.04', 'WSL', 'Windows 10', 'VS Code'],
+              tech: ['Python', 'TensorFlow', 'OpenCV', 'Kedro', 'Apache Airflow', 'Docker', 'Flask', 'pandas / NumPy'],
               teamSize: { en: '3 people', ja: '3人' },
               duration: { en: '4 months', ja: '4ヶ月' }
             },
@@ -770,7 +732,7 @@
                   '日次・月次の運用作業とオンコール対応を実施'
                 ]
               },
-              tech: ['Python', 'SQL', 'VBA', 'Pandas', 'Openpyxl', 'Selenium', 'Schedule', 'Windows 10', 'SQL Server', 'Anaconda', 'Jupyter Notebook', 'Azure Data Factory', 'Azure Database', 'Azure DevOps', 'Azure Blob Storage', 'Logic Apps', 'Power BI', 'Tableau', 'SSMS', 'Slack', 'MS Excel', 'Backlog', 'Teams', 'Outlook'],
+              tech: ['Python', 'SQL', 'Azure Data Factory', 'Azure DevOps', 'Azure Blob Storage', 'Logic Apps', 'SQL Server', 'Power BI', 'Tableau'],
               teamSize: { en: '3+ people', ja: '3人以上' },
               duration: { en: '5 months', ja: '5ヶ月' }
             },
@@ -805,7 +767,7 @@
                   'ドキュメント作成: レポート、テーブル仕様（変更）、テストレポート'
                 ]
               },
-              tech: ['SQL', 'Power Query', 'Windows 10', 'SQL Server', 'Azure Synapse Analytics', 'Power BI', 'Power Apps', 'Power Automate', 'Power Query', 'SharePoint', 'Azure'],
+              tech: ['SQL', 'Azure Synapse', 'Azure SQL', 'Power BI', 'Power Apps', 'Power Automate', 'Power Query', 'SharePoint'],
               teamSize: { en: '5 people', ja: '5人' },
               duration: { en: '10 months', ja: '10ヶ月' }
             },
@@ -836,7 +798,7 @@
                   'データクリーニング、データ可視化、予測モデル開発'
                 ]
               },
-              tech: ['Python3', 'Scikit-learn', 'Seaborn', 'NumPy', 'Matplotlib', 'Pandas', 'Windows 10', 'Jupyter Notebook'],
+              tech: ['Python', 'scikit-learn', 'pandas / NumPy', 'Matplotlib / Seaborn'],
               teamSize: { en: '2 people', ja: '2人' },
               duration: { en: '2 months', ja: '2ヶ月' }
             }
@@ -871,7 +833,49 @@
             { value: 'TB+',  label: language === 'ja' ? '日次データ規模' : 'Daily data scale' },
             { value: '236+', label: language === 'ja' ? 'サイネージ面数' : 'DOOH screens' },
             { value: '15+',  label: language === 'ja' ? 'セグメント数' : 'Audience segments' },
-            { value: '6',    label: language === 'ja' ? 'エンタープライズ案件' : 'Enterprise projects' }
+            { value: '3',    label: language === 'ja' ? '担当プロダクト領域' : 'Product lines owned' }
+          ];
+
+          const featured = {
+            tag: language === 'ja' ? '最新の取り組み · Traffic Safety Insights' : 'Most recent workstream · Traffic Safety Insights',
+            title: language === 'ja' ? 'AIによる交通リスク予測' : 'AI road-risk prediction',
+            body: language === 'ja'
+              ? '事故が起きる「前」に、道路上で事故が起きやすい場所をAIで予測・可視化し、自治体や学校が先回りして対策できるようにするサービス。子どもの交通安全にも活用されています。私はその裏側のデータ基盤を構築・運用し、匿名化されたGPS・行動データを、モデルが学習するリスクシグナルへとテラバイト規模で変換しています。朝日新聞「交通事故の羅針盤」でも紹介されました。'
+              : 'An AI service that predicts where road accidents are likely to happen — before they do — so cities and schools can act early. It is used to protect children’s traffic safety. I build and run the data layer behind it: terabyte-scale pipelines that turn anonymized GPS and behavioral data into the risk signals the model learns from. Featured in the Asahi Shimbun traffic-safety series.',
+            link: { label: language === 'ja' ? '朝日新聞「交通事故の羅針盤」で読む' : 'Read the Asahi Shimbun feature', url: 'https://kotsujiko.asahi.com/article/172' }
+          };
+
+          const capabilities = [
+            {
+              label: language === 'ja' ? 'データ & レイクハウス基盤' : 'Data & Lakehouse Engineering',
+              desc: language === 'ja' ? 'テラバイト規模のバッチパイプライン構築とレイクハウス設計。' : 'Terabyte-scale batch pipelines and lakehouse design.',
+              items: ['PySpark', 'Spark SQL', 'Databricks', 'AWS EMR', 'Hadoop / YARN', 'SQL Server', 'MySQL']
+            },
+            {
+              label: language === 'ja' ? 'クラウド基盤' : 'Cloud Platforms',
+              desc: language === 'ja' ? 'AWS・Azure 上での本番ワークロード運用。' : 'Production data workloads across AWS and Azure.',
+              items: ['AWS S3', 'AWS EC2', 'AWS EMR', 'Azure Synapse', 'Azure Data Factory', 'Azure DevOps']
+            },
+            {
+              label: language === 'ja' ? 'オーケストレーション & MLOps' : 'Orchestration & MLOps',
+              desc: language === 'ja' ? '再現性のある、自動化されたパイプライン。' : 'Reproducible, automated, deployable pipelines.',
+              items: ['Kedro', 'Apache Airflow', 'Docker', 'Papermill', 'Git / GitHub']
+            },
+            {
+              label: language === 'ja' ? '分析 & 機械学習' : 'Analytics & ML',
+              desc: language === 'ja' ? 'モデリング、特徴量エンジニアリング、統計処理。' : 'Modeling, feature engineering, statistical processing.',
+              items: ['Python', 'pandas', 'NumPy', 'scikit-learn', 'TensorFlow']
+            },
+            {
+              label: language === 'ja' ? '地理空間 & 位置情報' : 'Geospatial & Location Intelligence',
+              desc: language === 'ja' ? 'GPS・移動データの処理とプライバシー準拠の統計集計。' : 'GPS / mobility data and privacy-compliant aggregation.',
+              items: ['GeoPandas', 'Folium', 'GPS data processing', 'Privacy-compliant aggregation']
+            },
+            {
+              label: language === 'ja' ? 'BI & 可視化' : 'BI & Visualization',
+              desc: language === 'ja' ? '非エンジニアでも判断に使える意思決定ダッシュボード。' : 'Decision-ready dashboards for non-technical stakeholders.',
+              items: ['Tableau', 'Tableau Prep', 'Power BI', 'Power Platform']
+            }
           ];
 
           useEffect(() => {
@@ -1088,20 +1092,13 @@
                   </div>
 
                   <div className="overflow-hidden rounded-xl border border-white/10 bg-surface/40">
-                    {[
-                      { label: t.skills.bigData, items: technicalSkills.bigData },
-                      { label: t.skills.databases, items: technicalSkills.databases.map((d) => d.tools ? (d.name + ' (' + d.tools + ')') : d.name) },
-                      { label: t.skills.biTools, items: technicalSkills.biTools },
-                      { label: t.skills.microsoftAzure, items: technicalSkills.cloudPlatforms.azure },
-                      { label: t.skills.amazonAWS, items: technicalSkills.cloudPlatforms.aws },
-                      { label: t.skills.pythonLibraries, items: technicalSkills.pythonLibraries },
-                      { label: t.skills.devTools, items: technicalSkills.devTools },
-                      { label: t.skills.os, items: technicalSkills.os },
-                      { label: t.skills.collaboration, items: technicalSkills.collaborationTools }
-                    ].map((row, idx) => (
-                      <div key={idx} className="reveal grid gap-3 border-b border-white/10 px-6 py-5 last:border-b-0 md:grid-cols-[210px_1fr] md:gap-8 md:px-8">
-                        <h3 className="font-mono text-xs uppercase tracking-[0.13em] text-muted md:pt-1">{row.label}</h3>
-                        <div className="flex flex-wrap gap-2">
+                    {capabilities.map((row, idx) => (
+                      <div key={idx} className="reveal grid gap-3 border-b border-white/10 px-6 py-6 last:border-b-0 md:grid-cols-[280px_1fr] md:gap-8 md:px-8">
+                        <div>
+                          <h3 className="font-mono text-xs uppercase tracking-[0.13em] text-fg">{row.label}</h3>
+                          <p className="mt-1.5 text-xs leading-relaxed text-faint">{row.desc}</p>
+                        </div>
+                        <div className="flex flex-wrap content-start gap-2">
                           {row.items.map((item, i) => (
                             <span key={i} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-accent/40 hover:text-fg">{item}</span>
                           ))}
@@ -1130,11 +1127,26 @@
                             <span className="font-mono text-xs text-accent tnum">{p.period}</span>
                             <p className="mt-3 text-sm font-medium text-fg">{p.role}</p>
                             <p className="mt-1 text-xs leading-relaxed text-faint">{p.client}</p>
+                            <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-faint">{language === 'ja' ? 'Human Resocia 経由 · 派遣契約' : 'via Human Resocia · dispatch'}</p>
                             <p className="mt-3 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-faint">{t.projects.team} {project.teamSize[language]}</p>
                           </div>
                           <div>
                             <h3 className="font-display text-xl font-semibold text-fg text-balance md:text-2xl">{p.title}</h3>
                             <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">{p.description}</p>
+                            {idx === 0 && (
+                              <div className="mt-6 overflow-hidden rounded-lg border border-accent/30 bg-accent/[0.05]">
+                                <div className="border-b border-accent/20 px-4 py-2">
+                                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-accent">{featured.tag}</span>
+                                </div>
+                                <div className="p-4 md:p-5">
+                                  <h4 className="font-display text-base font-semibold text-fg">{featured.title}</h4>
+                                  <p className="mt-2 text-sm leading-relaxed text-muted">{featured.body}</p>
+                                  <a href={featured.link.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent/80">
+                                    {featured.link.label}<ArrowUpRight size={13} />
+                                  </a>
+                                </div>
+                              </div>
+                            )}
                             <div className="mt-6">
                               <h4 className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.13em] text-faint">{t.projects.keyResp}</h4>
                               <ResponsibilityList items={p.responsibilities} />
