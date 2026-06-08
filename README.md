@@ -135,10 +135,11 @@ Fill in your information to generate a contact email template.
 Visit my portfolio: **[https://jinoth.github.io](https://jinoth.github.io)**
 
 Built with:
-- React 18
-- Tailwind CSS
-- Lucide Icons
-- Vanilla JavaScript
+- React 18 (single-file, zero-build via CDN + Babel)
+- Tailwind CSS (custom design tokens)
+- Space Grotesk · Manrope · JetBrains Mono (Google Fonts)
+- Custom inline SVG icon set
+- Bilingual EN / 日本語, scroll-reveal motion, accessible by default
 
 ---
 

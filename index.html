@@ -1,395 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lakehouse-focused Analytics Engineer / Data Engineer delivering Databricks + AWS EMR pipelines for mobility, geospatial, and location intelligence programs in Tokyo.">
-    <title>Jinoth Kumar - Analytics Engineer Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jinoth Kumar - Analytics Engineer / Data Engineer in Tokyo. Lakehouse pipelines on AWS EMR + Databricks (PySpark / Spark SQL) for terabyte-scale mobility, geospatial, and location intelligence." />
+    <meta name="author" content="Jinoth Kumar" />
+    <meta name="theme-color" content="#0b0c0e" />
+    <title>Jinoth Kumar - Analytics Engineer / Data Engineer</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jinoth Kumar - Analytics Engineer / Data Engineer" />
+    <meta property="og:description" content="Lakehouse pipelines on AWS EMR + Databricks for terabyte-scale mobility and location intelligence. Based in Tokyo. EN / JA." />
+    <meta property="og:url" content="https://jinoth.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jinoth Kumar - Analytics Engineer / Data Engineer" />
+    <meta name="twitter:description" content="Lakehouse pipelines on AWS EMR + Databricks for terabyte-scale mobility and location intelligence. Tokyo." />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0c0e'/><rect x='3.5' y='3.5' width='57' height='57' rx='12' fill='none' stroke='%235cc9bb' stroke-width='2'/><text x='32' y='44' font-family='monospace' font-size='30' font-weight='700' fill='%235cc9bb' text-anchor='middle'>JK</text></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {}
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0b0c0e',
+              surface: '#15171a',
+              fg: '#ececea',
+              muted: '#9aa0a6',
+              faint: '#6b7178',
+              accent: '#5cc9bb',
+              'accent-dim': '#2f7d74'
+            },
+            fontFamily: {
+              display: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
             }
+          }
         }
+      }
     </script>
     <style>
-      body { 
-          margin: 0; 
-          padding: 0;
-          overflow-x: hidden;
-      }
-      html {
-          scroll-behavior: smooth;
-          overflow-x: hidden;
-      }
-      .skip-link {
-          position: absolute;
-          top: -40px;
-          left: 0;
-          background-color: #2563eb;
-          color: #fff;
-          padding: 0.75rem 1rem;
-          border-radius: 0.5rem;
-          z-index: 999;
-          text-decoration: none;
-          font-weight: 600;
-      }
-      .skip-link:focus {
-          top: 1rem;
-          left: 1rem;
-      }
-      @layer utilities {
-          .text-shadow {
-              text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-          }
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+      body { margin: 0; background-color: #0b0c0e; color: #ececea; overflow-x: hidden; font-family: 'Manrope', system-ui, sans-serif; }
+      * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      section[id] { scroll-margin-top: 4.5rem; }
+      ::selection { background: rgba(92,201,187,0.28); color: #ffffff; }
+      .tnum { font-variant-numeric: tabular-nums; }
+      .text-balance { text-wrap: balance; }
+
+      .skip-link { position: absolute; top: -48px; left: 1rem; z-index: 100; background: #5cc9bb; color: #0b0c0e; padding: 0.6rem 1rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; transition: top .2s ease; }
+      .skip-link:focus { top: 1rem; }
+
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+        outline: 2px solid #5cc9bb; outline-offset: 2px; border-radius: 4px;
       }
 
-      /* Mobile Responsiveness Fixes */
-      @media (max-width: 768px) {
-          /* Fix background alignment */
-          body {
-              background-attachment: fixed;
-              background-size: cover;
-          }
-
-          /* Header fixes */
-          header .max-w-7xl {
-              padding: 0.75rem 1rem;
-          }
-
-          header .text-2xl {
-              font-size: 1.5rem;
-          }
-
-          /* Hide desktop navigation on mobile */
-          header nav.flex.gap-8 {
-              display: none !important;
-          }
-
-          /* Language buttons adjustment */
-          header .flex.gap-2 {
-              margin-left: 0 !important;
-              padding-left: 0 !important;
-              border-left: none !important;
-          }
-
-          header .flex.gap-2 button {
-              padding: 0.5rem 1rem;
-              font-size: 0.875rem;
-          }
-
-          /* Hero section */
-          section.pt-24 {
-              padding-top: 6rem !important;
-          }
-
-          .text-5xl, .lg\\:text-6xl {
-              font-size: 2rem !important;
-              line-height: 1.2 !important;
-          }
-
-          .text-xl {
-              font-size: 1rem !important;
-              line-height: 1.5 !important;
-          }
-
-          /* Language info stacking */
-          .flex.items-center.gap-6.mb-8 {
-              flex-direction: column !important;
-              align-items: flex-start !important;
-              gap: 0.75rem !important;
-          }
-
-          .flex.items-center.gap-2.text-gray-300 {
-              width: 100%;
-          }
-
-          /* Buttons full width */
-          .flex.gap-4 {
-              flex-direction: column !important;
-              width: 100% !important;
-          }
-
-          .flex.gap-4 button {
-              width: 100% !important;
-          }
-
-          /* Icons proper size */
-          svg {
-              min-width: 20px !important;
-              min-height: 20px !important;
-              flex-shrink: 0 !important;
-          }
-
-          /* Grid layouts single column */
-          .grid.md\\:grid-cols-2,
-          .grid.lg\\:grid-cols-3,
-          .grid.md\\:grid-cols-3 {
-              grid-template-columns: 1fr !important;
-          }
-
-          /* Section padding */
-          section {
-              padding-left: 1rem !important;
-              padding-right: 1rem !important;
-          }
-
-          .py-20 {
-              padding-top: 3rem !important;
-              padding-bottom: 3rem !important;
-          }
-
-          /* Headings */
-          .text-4xl {
-              font-size: 2rem !important;
-          }
-
-          .text-2xl {
-              font-size: 1.5rem !important;
-          }
-
-          .text-3xl {
-              font-size: 1.75rem !important;
-          }
-
-          /* Card padding */
-          .rounded-xl {
-              padding: 1rem !important;
-          }
-
-          .p-6 {
-              padding: 1rem !important;
-          }
-
-          .p-8 {
-              padding: 1.25rem !important;
-          }
-
-          /* Contact form inputs */
-          input, textarea, select {
-              font-size: 16px !important; /* Prevents iOS zoom */
-          }
-
-          /* Skills section */
-          .flex.flex-wrap.gap-2 {
-              gap: 0.5rem !important;
-          }
-
-          /* Project references */
-          .flex.flex-wrap.gap-3 {
-              flex-direction: column !important;
-              gap: 0.5rem !important;
-          }
-
-          /* Hero card on mobile */
-          .lg\\:grid-cols-2 > div:last-child {
-              margin-top: 2rem;
-          }
-
-          /* Better text wrapping */
-          h1, h2, h3, h4, h5, h6 {
-              word-wrap: break-word;
-              overflow-wrap: break-word;
-          }
-
-          /* Contact buttons wrap better */
-          .flex.flex-wrap.justify-center.gap-4 {
-              flex-direction: column !important;
-              align-items: stretch !important;
-          }
-
-          .flex.flex-wrap.justify-center.gap-4 a {
-              width: 100% !important;
-              justify-content: center !important;
-          }
-
-          /* Footer stacking */
-          footer .flex.flex-col.md\\:flex-row {
-              flex-direction: column !important;
-              text-align: center !important;
-          }
-
-          footer .md\\:text-left,
-          footer .md\\:text-right {
-              text-align: center !important;
-          }
-
-          /* Certification grid */
-          .space-y-2 {
-              gap: 0.75rem;
-          }
-
-          /* Better spacing for mobile */
-          .mb-12 {
-              margin-bottom: 2rem !important;
-          }
-
-          .mb-8 {
-              margin-bottom: 1.5rem !important;
-          }
-
-          .mb-6 {
-              margin-bottom: 1rem !important;
-          }
-
-          /* Prevent horizontal scroll */
-          * {
-              max-width: 100%;
-          }
-
-          .max-w-7xl,
-          .max-w-4xl {
-              max-width: 100% !important;
-              padding-left: 1rem;
-              padding-right: 1rem;
-          }
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.65,.2,1); will-change: opacity, transform; }
+      .reveal.in { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
       }
 
-      /* Tablet adjustments (768px - 1024px) */
-      @media (min-width: 769px) and (max-width: 1024px) {
-          .lg\\:grid-cols-2 {
-              grid-template-columns: 1fr !important;
-          }
+      .grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.04; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-          .lg\\:grid-cols-3 {
-              grid-template-columns: repeat(2, 1fr) !important;
-          }
+      ::-webkit-scrollbar { width: 10px; height: 10px; }
+      ::-webkit-scrollbar-track { background: #0b0c0e; }
+      ::-webkit-scrollbar-thumb { background: #2a2e33; border-radius: 6px; border: 2px solid #0b0c0e; }
+      ::-webkit-scrollbar-thumb:hover { background: #3a3f45; }
 
-          section {
-              padding-left: 2rem !important;
-              padding-right: 2rem !important;
-          }
+      input:-webkit-autofill, textarea:-webkit-autofill { -webkit-text-fill-color: #ececea; -webkit-box-shadow: 0 0 0 1000px #15171a inset; }
+
+      @media (max-width: 767px) {
+        input, textarea, select { font-size: 16px !important; }
       }
     </style>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jinoth Kumar",
-        "jobTitle": "Analytics Engineer / Data Engineer",
-        "description": "Lakehouse-focused Analytics Engineer delivering AWS EMR + Databricks (PySpark/Spark SQL) pipelines for terabyte-scale mobility and location data, segmentation logic, and leadership-ready insights.",
-        "url": "https://jinoth.github.io/",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Major Japanese Telecom"
-        },
-        "knowsAbout": [
-          "Mobility analytics",
-          "Geospatial intelligence",
-          "Location intelligence",
-          "Lakehouse architecture",
-          "Databricks",
-          "AWS EMR",
-          "PySpark",
-          "Spark SQL",
-          "Kedro",
-          "Apache Airflow",
-          "Tableau dashboards"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tokyo",
-          "addressCountry": "JP"
-        },
-        "knowsLanguage": [
-          "English",
-          "Japanese (JLPT N2, preparing for N1)"
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/jinothkumar",
-          "https://github.com/jinoth"
-        ]
-      }
-    </script>
 </head>
 <body>
     <div id="root"></div>
-    
+
     <script type="text/babel">
-        const { useState } = React;
-        
-        // Lucide icons as inline SVG components
-        const Briefcase = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-        );
-        
-        const Code = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-        );
-        
-        const Database = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-        );
-        
-        const Brain = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path></svg>
-        );
-        
-        const Cloud = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-        );
-        
-        const BarChart3 = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+        const { useState, useEffect, useRef } = React;
+
+        const Eyebrow = ({ children }) => (
+          <span className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-accent">{children}</span>
         );
 
-        const Layers = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-        );
-        
-        const ChevronRight = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        );
-        
-        const Award = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-        );
-        
-        const MapPin = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        );
-        
-        const Languages = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg>
-        );
-        
-        const GraduationCap = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-        );
-        
-        const Mail = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-        );
-        
-        const Linkedin = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        );
-        
-        const Github = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+        const ArrowRight = ({ size = 18, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         );
 
-        const ChessIcon = ({size = 28, className = ""}) => (
-            <img
-              src="assets/knight.svg"
-              alt="Chess knight icon"
-              width={size}
-              height={size}
-              className={`inline-block align-middle ${className}`}
-              loading="lazy"
-            />
+        const ArrowUpRight = ({ size = 16, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         );
 
-        const Copy = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        const MapPin = ({ size = 16, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
         );
 
-        const Check = ({size = 24, className = ""}) => (
-            <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        const Mail = ({ size = 18, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        );
+
+        const Github = ({ size = 18, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+        );
+
+        const Linkedin = ({ size = 18, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        );
+
+        const Copy = ({ size = 15, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        );
+
+        const Check = ({ size = 15, className = "" }) => (
+          <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        );
+
+        const ChessIcon = ({ size = 18, className = "" }) => (
+          <img src="assets/knight.svg" alt="Chess knight icon" width={size} height={size} className={`inline-block align-middle ${className}`} loading="lazy" />
+        );
+
+        const ResponsibilityList = ({ items }) => (
+          <ul className="space-y-2.5">
+            {items.filter(Boolean).map((resp, i) => {
+              const isGroup = resp.startsWith('【') || resp.startsWith('[');
+              const isRef = resp.startsWith('References:') || resp.startsWith('Reference:') || resp.startsWith('参考資料');
+              if (isGroup) {
+                return (
+                  <li key={i} className="pt-3 first:pt-0">
+                    <span className="font-mono text-[0.72rem] uppercase tracking-[0.1em] text-accent">{resp.replace(/[【】\[\]]/g, '').trim()}</span>
+                  </li>
+                );
+              }
+              if (isRef) {
+                return <li key={i} className="text-xs italic text-faint">{resp}</li>;
+              }
+              return (
+                <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted">
+                  <span className="mt-[0.55rem] h-1 w-1 flex-shrink-0 rounded-full bg-accent/70"></span>
+                  <span>{resp}</span>
+                </li>
+              );
+            })}
+          </ul>
         );
 
         function Portfolio() {
@@ -1103,630 +867,421 @@
             { title: 'Power Apps - Complete Guide to Microsoft PowerApps', platform: 'Udemy', duration: '8.5 hours', date: 'Jun 2022' }
           ];
 
+
+          const metrics = [
+            { value: '4+',   label: language === 'ja' ? '経験年数' : 'Years experience' },
+            { value: 'TB+',  label: language === 'ja' ? '日次データ規模' : 'Daily data scale' },
+            { value: '236+', label: language === 'ja' ? 'サイネージ面数' : 'DOOH screens' },
+            { value: '15+',  label: language === 'ja' ? 'セグメント数' : 'Audience segments' },
+            { value: '6',    label: language === 'ja' ? 'エンタープライズ案件' : 'Enterprise projects' }
+          ];
+
+          useEffect(() => {
+            const els = Array.from(document.querySelectorAll('.reveal'));
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || typeof IntersectionObserver === 'undefined') {
+              els.forEach((el) => el.classList.add('in'));
+              return;
+            }
+            const io = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in');
+                  io.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+            els.forEach((el) => io.observe(el));
+            // Safety net: never let a section stay hidden if the observer misfires.
+            const safety = setTimeout(() => els.forEach((el) => el.classList.add('in')), 1400);
+            return () => { io.disconnect(); clearTimeout(safety); };
+          }, []);
+
           return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
-              <a
-                href="#main-content"
-                className="skip-link"
-              >
-                {language === 'ja' ? 'メインコンテンツへスキップ' : 'Skip to main content'}
-              </a>
+            <div className="relative min-h-screen bg-ink font-sans text-fg antialiased">
+              <div className="grain" aria-hidden="true"></div>
+              <a href="#main-content" className="skip-link">{language === 'ja' ? 'メインコンテンツへスキップ' : 'Skip to main content'}</a>
+
               {/* Header */}
-              <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-lg border-b border-blue-500/20">
-                <div className="max-w-7xl mx-auto px-6 py-4">
-                  <div className="flex justify-between items-center">
-                    <div
-                      className="text-2xl font-bold"
-                      role="img"
-                      aria-label={language === 'ja' ? 'ジノトゥクマル アナリティクスエンジニア' : 'Jinoth Kumar Analytics Engineer'}
-                    >
-                      <span className="sr-only">Jinoth Kumar </span>
-                      <span className="text-white">Analytics </span>
-                      <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Engineer</span>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <nav className="flex gap-8" aria-label={language === 'ja' ? '主要ナビゲーション' : 'Primary navigation'}>
-                        {t.nav.map((tab, idx) => (
+              <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-md">
+                <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+                  <a
+                    href="#main-content"
+                    onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setActiveTab('overview'); }}
+                    className="group flex items-center gap-3"
+                    aria-label={language === 'ja' ? 'ジノトゥクマル アナリティクスエンジニア' : 'Jinoth Kumar, Analytics Engineer'}
+                  >
+                    <span className="grid h-9 w-9 place-items-center rounded-md border border-white/15 font-mono text-sm font-semibold text-fg transition-colors group-hover:border-accent group-hover:text-accent">JK</span>
+                    <span className="hidden flex-col leading-tight sm:flex">
+                      <span className="text-sm font-semibold text-fg">Jinoth Kumar</span>
+                      <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-faint">Analytics / Data Engineer</span>
+                    </span>
+                  </a>
+                  <div className="flex items-center gap-5 sm:gap-7">
+                    <nav className="hidden gap-7 md:flex" aria-label={language === 'ja' ? '主要ナビゲーション' : 'Primary navigation'}>
+                      {t.nav.map((tab, idx) => {
+                        const ids = ['overview', 'skills', 'projects', 'contact'];
+                        const id = ids[idx];
+                        return (
                           <button
                             key={tab}
                             onClick={() => {
-                              setActiveTab(['overview', 'skills', 'projects', 'contact'][idx]);
-                              const sectionId = idx === 0 ? null : ['overview', 'skills', 'projects', 'contact'][idx];
-                              if (sectionId) {
-                                const element = document.getElementById(sectionId);
-                                if (element) {
-                                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                }
-                              } else {
+                              setActiveTab(id);
+                              if (idx === 0) {
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                              } else {
+                                const el = document.getElementById(id);
+                                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               }
                             }}
-                            className={`capitalize font-medium transition-all ${
-                              activeTab === ['overview', 'skills', 'projects', 'contact'][idx]
-                                ? 'text-blue-400 border-b-2 border-blue-400' 
-                              : 'text-gray-400 hover:text-white'
-                            }`}
-                            aria-current={activeTab === ['overview', 'skills', 'projects', 'contact'][idx] ? 'page' : undefined}
+                            className={`font-mono text-xs uppercase tracking-[0.14em] transition-colors ${activeTab === id ? 'text-accent' : 'text-muted hover:text-fg'}`}
+                            aria-current={activeTab === id ? 'page' : undefined}
                           >
                             {tab}
                           </button>
-                        ))}
-                      </nav>
-                      <div className="flex gap-2 ml-4 border-l border-gray-600 pl-4">
-                        <button
-                          onClick={() => switchLanguage('en')}
-                          className={`px-3 py-1 rounded font-semibold text-sm transition-all ${
-                            language === 'en'
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
-                          }`}
-                          aria-pressed={language === 'en'}
-                          aria-label={language === 'en' ? 'English language selected' : '英語表示に切り替え'}
-                        >
-                          EN
-                        </button>
-                        <button
-                          onClick={() => switchLanguage('ja')}
-                          className={`px-3 py-1 rounded font-semibold text-sm transition-all ${
-                            language === 'ja'
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
-                          }`}
-                          aria-pressed={language === 'ja'}
-                          aria-label={language === 'ja' ? '日本語表示: 選択中' : 'Switch to Japanese'}
-                        >
-                          日本語
-                        </button>
-                      </div>
+                        );
+                      })}
+                    </nav>
+                    <div className="flex items-center gap-1 rounded-full border border-white/10 p-0.5">
+                      <button
+                        onClick={() => switchLanguage('en')}
+                        className={`rounded-full px-3 py-1 font-mono text-xs transition-colors ${language === 'en' ? 'bg-accent text-ink' : 'text-muted hover:text-fg'}`}
+                        aria-pressed={language === 'en'}
+                        aria-label={language === 'en' ? 'English selected' : 'Switch to English'}
+                      >
+                        EN
+                      </button>
+                      <button
+                        onClick={() => switchLanguage('ja')}
+                        className={`rounded-full px-3 py-1 font-mono text-xs transition-colors ${language === 'ja' ? 'bg-accent text-ink' : 'text-muted hover:text-fg'}`}
+                        aria-pressed={language === 'ja'}
+                        aria-label={language === 'ja' ? '日本語: 選択中' : 'Switch to Japanese'}
+                      >
+                        日本語
+                      </button>
                     </div>
                   </div>
                 </div>
               </header>
+
               <main id="main-content" role="main">
 
-              {/* Hero Section */}
-              <section className="pt-24 pb-16 px-6">
-                <div className="max-w-7xl mx-auto">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                        {t.hero.title}{' '}
-                        <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">{t.hero.titleGradient}</span>
-                      </h1>
-                      <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                        {t.hero.description}
-                      </p>
-                      <div className="flex items-center gap-6 mb-8 flex-wrap">
-                        <div className="flex items-center gap-2 text-gray-300">
-                          <MapPin size={20} className="text-blue-400" />
-                          <span>{t.hero.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-300">
-                          <Languages size={20} className="text-blue-400" />
-                          <span>{t.hero.japanese}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-300">
-                          <Languages size={20} className="text-blue-400" />
-                          <span>{t.hero.english}</span>
-                        </div>
+              {/* Hero */}
+              <section className="relative px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+                <div className="mx-auto max-w-6xl">
+                  <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+                    <div className="reveal">
+                      <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+                        <Eyebrow>Analytics Engineer / Data Engineer</Eyebrow>
+                        <span className="inline-flex items-center gap-1.5 font-mono text-xs text-muted">
+                          <span className="h-1.5 w-1.5 rounded-full bg-accent"></span>
+                          {language === 'ja' ? '東京、日本' : 'Tokyo, Japan'}
+                        </span>
                       </div>
-                      <div className="flex gap-4">
-                        <button 
-                          onClick={() => {
-                            document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-                            setActiveTab('projects');
-                          }}
-                          className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                      <h1 className="font-display text-[1.9rem] font-semibold leading-[1.12] tracking-tight text-fg [overflow-wrap:break-word] sm:text-5xl sm:leading-[1.05] sm:text-balance lg:text-6xl">
+                        {t.hero.title}{' '}
+                        <span className="block text-accent sm:inline">{t.hero.titleGradient}</span>
+                      </h1>
+                      <p className="mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg">{t.hero.description}</p>
+                      <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 font-mono text-xs text-faint">
+                        <span className="inline-flex items-center gap-2"><MapPin size={15} className="text-accent" />{t.hero.location}</span>
+                        <span className="hidden h-3 w-px bg-white/15 sm:block"></span>
+                        <span>{t.hero.japanese}</span>
+                        <span className="hidden h-3 w-px bg-white/15 sm:block"></span>
+                        <span>{t.hero.english}</span>
+                      </div>
+                      <div className="mt-10 flex flex-wrap gap-3">
+                        <button
+                          onClick={() => { const el = document.getElementById('projects'); if (el) el.scrollIntoView({ behavior: 'smooth' }); setActiveTab('projects'); }}
+                          className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-all hover:bg-accent/90 active:scale-[0.98]"
+                        >
                           {t.hero.viewProjects}
+                          <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
                         </button>
-                        <button 
-                          onClick={() => {
-                            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-                            setActiveTab('contact');
-                          }}
-                          className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all">
+                        <button
+                          onClick={() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); setActiveTab('contact'); }}
+                          className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-fg transition-colors hover:border-accent hover:text-accent active:scale-[0.98]"
+                        >
                           {t.hero.contactMe}
                         </button>
                       </div>
                     </div>
-                    <div className="relative">
-                      <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-2xl p-8 border border-blue-500/30 backdrop-blur-sm">
-                        <div className="space-y-4">
-                          {t.hero.highlights.map((highlight, idx) => {
-                            const iconOptions = [
-                              { Component: Cloud, color: 'text-blue-300 bg-blue-500/20' },
-                              { Component: Database, color: 'text-purple-300 bg-purple-500/20' },
-                              { Component: Brain, color: 'text-teal-200 bg-teal-500/20' },
-                              { Component: BarChart3, color: 'text-cyan-300 bg-cyan-500/20' },
-                              { Component: Code, color: 'text-green-300 bg-green-500/20' },
-                              { Component: Layers, color: 'text-orange-300 bg-orange-500/20' },
-                              { Component: Cloud, color: 'text-indigo-300 bg-indigo-500/20' }
-                            ];
-                            const { Component, color } = iconOptions[idx % iconOptions.length];
-                            return (
-                              <div key={idx} className="flex items-center gap-4 text-white">
-                                <span className="flex h-10 w-10 items-center justify-center">
-                                  <Component size={28} />
-                                </span>
-                                <span className="text-lg font-semibold leading-snug">{highlight}</span>
-                              </div>
-                            );
-                          })}
+
+                    <div className="reveal lg:mt-1">
+                      <div className="overflow-hidden rounded-xl border border-white/10 bg-surface/60 shadow-2xl shadow-black/40">
+                        <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3">
+                          <span className="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+                          <span className="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+                          <span className="h-2.5 w-2.5 rounded-full bg-accent/70"></span>
+                          <span className="ml-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-faint">{language === 'ja' ? '// 主な取り組み' : '// what i do'}</span>
                         </div>
+                        <ul className="divide-y divide-white/10">
+                          {t.hero.highlights.map((h, idx) => (
+                            <li key={idx} className="flex gap-4 px-5 py-4">
+                              <span className="font-mono text-xs text-accent tnum">{String(idx + 1).padStart(2, '0')}</span>
+                              <span className="text-sm leading-relaxed text-muted">{h}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
 
-              {/* Skills Section */}
-              <section id="skills" className="py-20 px-6 bg-slate-900/50">
-                <div className="max-w-7xl mx-auto">
-                  <h2 className="text-4xl font-bold text-white mb-12 text-center">
-                    {t.skills.title} <span className="text-blue-400">{t.skills.titleHighlight}</span>
-                  </h2>
-                  
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    {/* Programming Languages */}
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-blue-500/20 hover:border-blue-500/50 transition-all">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Code className="text-blue-400" size={28} />
-                        <h3 className="text-xl font-bold text-white">{t.skills.programmingLanguages}</h3>
-                      </div>
-                      <div className="space-y-3">
-                        {technicalSkills.programmingLanguages.map((lang, i) => (
-                          <div key={i} className="flex justify-between items-center">
-                            <span className="text-gray-300">{lang.name}</span>
-                            <span className="text-blue-400 text-sm font-semibold">{lang.level}</span>
-                          </div>
-                        ))}
+              {/* Metrics band */}
+              <section className="border-y border-white/10 bg-surface/40">
+                <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-y divide-white/10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-y-0">
+                  {metrics.map((m, idx) => (
+                    <div key={idx} className="reveal px-6 py-7" style={{ transitionDelay: (idx * 60) + 'ms' }}>
+                      <div className="font-display text-3xl font-semibold text-fg tnum md:text-4xl">{m.value}</div>
+                      <div className="mt-2 font-mono text-[0.7rem] uppercase leading-snug tracking-[0.1em] text-faint">{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* About */}
+              {t.aboutSection && (
+              <section className="px-6 py-20 md:py-28">
+                <div className="mx-auto max-w-6xl">
+                  <div className="reveal mb-12 max-w-2xl">
+                    <Eyebrow>{language === 'ja' ? '自己紹介' : 'about'}</Eyebrow>
+                    <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-fg md:text-4xl">{t.aboutSection.title}</h2>
+                  </div>
+                  <div className="grid gap-6 lg:grid-cols-5">
+                    <div className="reveal rounded-xl border border-white/10 bg-surface/50 p-7 md:p-9 lg:col-span-3">
+                      <p className="text-base leading-relaxed text-muted md:text-lg">{t.aboutSection.aboutText}</p>
+                      <div className="mt-7">
+                        <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-faint">{t.aboutSection.workingStyleTitle}</h3>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {t.aboutSection.workingStyleBullets.map((item, idx) => (
+                            <span key={idx} className="rounded-full border border-white/15 px-3.5 py-1.5 text-sm text-fg">{item}</span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-
-                    {/* Databases */}
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Database className="text-cyan-400" size={28} />
-                        <h3 className="text-xl font-bold text-white">{t.skills.databases}</h3>
+                    <div className="reveal rounded-xl border border-white/10 bg-surface/50 p-7 md:p-9 lg:col-span-2" style={{ transitionDelay: '80ms' }}>
+                      <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-faint">{t.aboutSection.mbti.title || 'MBTI'}</h3>
+                      <div className="mt-4 flex items-baseline gap-3">
+                        <span className="font-display text-4xl font-semibold text-accent">{t.aboutSection.mbti.type}</span>
+                        <span className="text-sm text-muted">{t.aboutSection.mbti.nickname}</span>
                       </div>
-                      <div className="space-y-2">
-                        {technicalSkills.databases.map((db, i) => (
-                          <div key={i} className="text-gray-300">
-                            <div className="font-semibold text-white">{db.name}</div>
-                            {db.tools && <div className="text-sm text-gray-400">Tools: {db.tools}</div>}
-                          </div>
+                      <p className="mt-4 text-sm leading-relaxed text-muted">{t.aboutSection.mbti.blurb}</p>
+                      <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                        {t.aboutSection.mbti.links && t.aboutSection.mbti.links.map((link) => (
+                          <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-mono text-xs text-accent/90 transition-colors hover:text-accent">
+                            {link.text}<ArrowUpRight size={12} />
+                          </a>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Big Data */}
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/50 transition-all">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Layers className="text-orange-400" size={28} />
-                        <h3 className="text-xl font-bold text-white">{t.skills.bigData}</h3>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {technicalSkills.bigData.map((tool, i) => (
-                          <span key={i} className="bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full text-sm border border-orange-500/30">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* BI Tools */}
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all">
-                      <div className="flex items-center gap-3 mb-4">
-                        <BarChart3 className="text-purple-400" size={28} />
-                        <h3 className="text-xl font-bold text-white">{t.skills.biTools}</h3>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {technicalSkills.biTools.map((tool, i) => (
-                          <span key={i} className="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
+                      <p className="mt-5 text-xs text-faint">{t.aboutSection.mbti.disclaimer}</p>
                     </div>
                   </div>
+                </div>
+              </section>
+              )}
 
-                  {/* Cloud Platforms */}
-                  <div className="grid md:grid-cols-2 gap-6 mb-12">
-                    <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border border-blue-500/30">
-                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                        <Cloud className="text-blue-400" size={28} />
-                        {t.skills.microsoftAzure}
-                      </h3>
-                      <div className="grid grid-cols-2 gap-2">
-                        {technicalSkills.cloudPlatforms.azure.map((service, i) => (
-                          <span key={i} className="bg-blue-900/40 text-blue-300 px-3 py-2 rounded-lg text-sm border border-blue-500/30">
-                            {service}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-orange-900/30 to-yellow-900/30 rounded-xl p-6 border border-orange-500/30">
-                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                        <Cloud className="text-orange-400" size={28} />
-                        {t.skills.amazonAWS}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {technicalSkills.cloudPlatforms.aws.map((service, i) => (
-                          <span key={i} className="bg-orange-900/40 text-orange-300 px-3 py-2 rounded-lg text-sm border border-orange-500/30">
-                            {service}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+              {/* Skills */}
+              <section id="skills" className="border-t border-white/10 px-6 py-20 md:py-28">
+                <div className="mx-auto max-w-6xl">
+                  <div className="reveal mb-12 max-w-2xl">
+                    <Eyebrow>{language === 'ja' ? 'スキル' : 'capabilities'}</Eyebrow>
+                    <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-fg md:text-4xl">{t.skills.title} {t.skills.titleHighlight}</h2>
                   </div>
 
-                  {/* Python Libraries */}
-                  <div className="bg-slate-800/50 rounded-xl p-6 border border-green-500/20 mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                      <Brain className="text-green-400" size={28} />
-                      {t.skills.pythonLibraries}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {technicalSkills.pythonLibraries.map((lib, i) => (
-                        <span key={i} className="bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm border border-green-500/30">
-                          {lib}
-                        </span>
+                  <div className="reveal mb-8 rounded-xl border border-white/10 bg-surface/40 p-6 md:p-8">
+                    <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.15em] text-faint">{t.skills.programmingLanguages}</h3>
+                    <div className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
+                      {technicalSkills.programmingLanguages.map((lang, i) => (
+                        <div key={i} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2">
+                          <span className="text-sm text-fg">{lang.name}</span>
+                          <span className="font-mono text-xs text-accent">{lang.level}</span>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Development Tools */}
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-blue-500/20">
-                      <h4 className="text-lg font-bold text-white mb-3">{t.skills.devTools}</h4>
-                      <div className="space-y-2">
-                        {technicalSkills.devTools.map((tool, i) => (
-                          <div key={i} className="text-gray-300 text-sm">{tool}</div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-cyan-500/20">
-                      <h4 className="text-lg font-bold text-white mb-3">{t.skills.os}</h4>
-                      <div className="space-y-2">
-                        {technicalSkills.os.map((os, i) => (
-                          <div key={i} className="text-gray-300 text-sm">{os}</div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-800/50 rounded-xl p-6 border border-purple-500/20">
-                      <h4 className="text-lg font-bold text-white mb-3">{t.skills.collaboration}</h4>
-                      <div className="space-y-2">
-                        <div className="text-gray-300 text-sm">
-                          <span className="text-blue-400 font-semibold">{t.skills.communication}</span> Slack, Teams, Outlook
-                        </div>
-                        <div className="text-gray-300 text-sm">
-                          <span className="text-cyan-400 font-semibold">{t.skills.projectMgmt}</span> Backlog, Jira, Redmine
-                        </div>
-                        <div className="text-gray-300 text-sm">
-                          <span className="text-green-400 font-semibold">{t.skills.fileSharing}</span> Box
+                  <div className="overflow-hidden rounded-xl border border-white/10 bg-surface/40">
+                    {[
+                      { label: t.skills.bigData, items: technicalSkills.bigData },
+                      { label: t.skills.databases, items: technicalSkills.databases.map((d) => d.tools ? (d.name + ' (' + d.tools + ')') : d.name) },
+                      { label: t.skills.biTools, items: technicalSkills.biTools },
+                      { label: t.skills.microsoftAzure, items: technicalSkills.cloudPlatforms.azure },
+                      { label: t.skills.amazonAWS, items: technicalSkills.cloudPlatforms.aws },
+                      { label: t.skills.pythonLibraries, items: technicalSkills.pythonLibraries },
+                      { label: t.skills.devTools, items: technicalSkills.devTools },
+                      { label: t.skills.os, items: technicalSkills.os },
+                      { label: t.skills.collaboration, items: technicalSkills.collaborationTools }
+                    ].map((row, idx) => (
+                      <div key={idx} className="reveal grid gap-3 border-b border-white/10 px-6 py-5 last:border-b-0 md:grid-cols-[210px_1fr] md:gap-8 md:px-8">
+                        <h3 className="font-mono text-xs uppercase tracking-[0.13em] text-muted md:pt-1">{row.label}</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {row.items.map((item, i) => (
+                            <span key={i} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-accent/40 hover:text-fg">{item}</span>
+                          ))}
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </section>
 
-              {/* Projects Section */}
-              <section id="projects" className="py-20 px-6">
-                <div className="max-w-7xl mx-auto">
-                  <h2 className="text-4xl font-bold text-white mb-12 text-center">
-                    {t.projects.title} <span className="text-blue-400">{t.projects.titleHighlight}</span>
-                  </h2>
-                  
-                  {/* Professional Projects */}
-                  <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <Briefcase className="text-cyan-400" size={28} />
-                      {t.projects.professional}
-                    </h3>
+              {/* Projects */}
+              <section id="projects" className="border-t border-white/10 px-6 py-20 md:py-28">
+                <div className="mx-auto max-w-6xl">
+                  <div className="reveal mb-3 max-w-2xl">
+                    <Eyebrow>{language === 'ja' ? '実績' : 'selected work'}</Eyebrow>
+                    <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-fg md:text-4xl">{t.projects.title} {t.projects.titleHighlight}</h2>
+                  </div>
+                  <p className="reveal mb-10 font-mono text-xs text-faint">{t.projects.professional} · {t.projects.staffingNotice} — <span className="text-muted">{t.projects.staffingCompany}</span></p>
 
-                    {/* DISPATCH CONTRACT BANNER - NEW CODE */}
-                    <div className="mb-6 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border-l-4 border-blue-400 rounded-r-lg p-4">
-                      <div className="flex items-center gap-3">
-                        <svg className="text-cyan-400 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                          <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                        <div>
-                          <p className="text-cyan-300 font-semibold">
-                            {language === 'ja' ? '人材契約によるプロジェクト' : 'Projects completed via staffing contract'}
-                          </p>
-                          <p className="text-gray-300 text-sm">
-                            via <span className="font-semibold">Human Resocia</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* END OF DISPATCH CONTRACT BANNER */}
-
-                    <div className="space-y-6">
-                      {projects.slice(0, -2).map((project, idx) => {
-                        const p = project[language];
-                        return (
-                        <div key={idx} className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-xl p-6 border border-blue-500/20 hover:border-blue-500/50 transition-all">
-                          <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
-                            <div>
-                              <h3 className="text-2xl font-bold text-white mb-2">{p.title}</h3>
-                              <div className="flex flex-wrap gap-4 text-sm">
-                                <span className="text-cyan-400">{p.period}</span>
-                                <span className="text-gray-400">• {p.role}</span>
-                                <span className="text-gray-400">• {t.projects.team} {project.teamSize[language]}</span>
-                              </div>
-                            </div>
+                  <div>
+                    {projects.slice(0, -2).map((project, idx) => {
+                      const p = project[language];
+                      return (
+                        <article key={idx} className="reveal grid gap-6 border-t border-white/10 py-10 md:grid-cols-[1fr_2.3fr] md:gap-12 md:py-12">
+                          <div className="md:sticky md:top-24 md:self-start">
+                            <span className="font-mono text-xs text-accent tnum">{p.period}</span>
+                            <p className="mt-3 text-sm font-medium text-fg">{p.role}</p>
+                            <p className="mt-1 text-xs leading-relaxed text-faint">{p.client}</p>
+                            <p className="mt-3 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-faint">{t.projects.team} {project.teamSize[language]}</p>
                           </div>
-                          
-                          <p className="text-gray-300 mb-4">{p.description}</p>
-                          
-                          <div className="mb-4">
-                            <h4 className="text-white font-semibold mb-2">{t.projects.keyResp}</h4>
-                            <ul className="space-y-1">
-                              {p.responsibilities.map((resp, i) => (
-                                resp && (
-                                <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                                  <ChevronRight className="text-blue-400 mt-0.5 flex-shrink-0" size={16} />
-                                  {resp}
-                                </li>
-                                )
-                              ))}
-                            </ul>
-                          </div>
-                          
                           <div>
-                            <h4 className="text-white font-semibold mb-2 text-sm">{t.projects.techUsed}</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {project.tech.map((tech, i) => (
-                                <span key={i} className="bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-xs border border-blue-500/30">
-                                  {tech}
-                                </span>
-                              ))}
+                            <h3 className="font-display text-xl font-semibold text-fg text-balance md:text-2xl">{p.title}</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">{p.description}</p>
+                            <div className="mt-6">
+                              <h4 className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.13em] text-faint">{t.projects.keyResp}</h4>
+                              <ResponsibilityList items={p.responsibilities} />
                             </div>
-                          </div>
-                          
-                          {project.references && (
-                            <div className="mt-4 pt-4 border-t border-blue-500/20">
-                              <h4 className="text-white font-semibold mb-2 text-sm">{t.projects.references}</h4>
-                              <div className="flex flex-wrap gap-3">
-                                {project.references.map((ref, i) => (
-                                  <a key={i} href={ref.url} target="_blank" rel="noopener noreferrer" 
-                                     className="text-cyan-400 hover:text-cyan-300 text-sm underline flex items-center gap-1">
-                                    {ref.title[language]}
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                  </a>
+                            <div className="mt-6">
+                              <h4 className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.13em] text-faint">{t.projects.techUsed}</h4>
+                              <div className="flex flex-wrap gap-1.5">
+                                {project.tech.map((tech, i) => (
+                                  <span key={i} className="rounded border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[0.7rem] text-muted">{tech}</span>
                                 ))}
                               </div>
                             </div>
-                          )}
-                        </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* University Projects */}
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <GraduationCap className="text-purple-400" size={28} />
-                      {t.projects.university}
-                    </h3>
-                    <div className="space-y-6">
-                      {projects.slice(-2).map((project, idx) => {
-                        const p = project[language];
-                        return (
-                        <div key={idx} className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all">
-                          <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
-                            <div>
-                              <h3 className="text-2xl font-bold text-white mb-2">{p.title}</h3>
-                              <div className="flex flex-wrap gap-4 text-sm">
-                                <span className="text-purple-400">{p.period}</span>
-                                <span className="text-gray-400">• {p.role}</span>
-                                <span className="text-gray-400">• {t.projects.team} {project.teamSize[language]}</span>
+                            {project.references && (
+                              <div className="mt-6 border-t border-white/10 pt-5">
+                                <h4 className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.13em] text-faint">{t.projects.references}</h4>
+                                <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+                                  {project.references.map((ref, i) => (
+                                    <a key={i} href={ref.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-accent/90 transition-colors hover:text-accent">
+                                      {ref.title[language]}<ArrowUpRight size={13} />
+                                    </a>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
+                            )}
                           </div>
-                          
-                          <p className="text-gray-300 mb-4">{p.description}</p>
-                          
-                          <div className="mb-4">
-                            <h4 className="text-white font-semibold mb-2">{t.projects.keyResp}</h4>
-                            <ul className="space-y-1">
-                              {p.responsibilities.map((resp, i) => (
-                                resp && (
-                                <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                                  <ChevronRight className="text-purple-400 mt-0.5 flex-shrink-0" size={16} />
-                                  {resp}
-                                </li>
-                                )
-                              ))}
-                            </ul>
-                          </div>
-                          
-                          <div>
-                            <h4 className="text-white font-semibold mb-2 text-sm">{t.projects.techUsed}</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {project.tech.map((tech, i) => (
-                                <span key={i} className="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-xs border border-purple-500/30">
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* About / Working Style */}
-              {t.aboutSection && (
-                <section className="py-20 px-6 bg-slate-900/40">
-                  <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl font-bold text-white mb-10 text-center">
-                      {t.aboutSection.title}
-                    </h2>
-                    <div className="grid lg:grid-cols-2 gap-6">
-                      <div className="bg-slate-800/60 rounded-2xl border border-blue-500/20 p-6 space-y-4">
-                        <p className="text-gray-300 leading-relaxed">
-                          {t.aboutSection.aboutText}
-                        </p>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white mb-3">
-                            {t.aboutSection.workingStyleTitle}
-                          </h3>
-                          <div className="flex flex-wrap gap-2">
-                            {t.aboutSection.workingStyleBullets.map((item, idx) => (
-                              <span
-                                key={idx}
-                                className="bg-slate-900/60 border border-blue-500/30 px-3 py-1 rounded-full text-sm text-blue-100"
-                              >
-                                {item}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-slate-800/60 rounded-2xl border border-blue-500/20 p-6 space-y-4">
-                        <h3 className="text-lg font-semibold text-white">
-                          {t.aboutSection.mbti.title || (language === 'ja' ? 'MBTIタイプ' : 'MBTI Personality Type')}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-200">
-                          <span className="inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-slate-900/70 px-3 py-1 text-white">
-                            <span className="inline-flex h-4 w-4 text-cyan-300">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M7 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.5a2 2 0 0 0 1.4-.6l3.5-3.5A2 2 0 0 0 20 15.5V5a2 2 0 0 0-2-2H7zm0 2h11v10h-2a2 2 0 0 0-2 2v2H7V5zm7 14v-2a1 1 0 0 1 1-1h2l-3 3z"/>
-                              </svg>
-                            </span>
-                            <span className="font-semibold">{t.aboutSection.mbti.type}</span>
-                            <span className="opacity-70">· {t.aboutSection.mbti.nickname}</span>
-                          </span>
-                          <span className="text-sm opacity-90">{t.aboutSection.mbti.blurb}</span>
-                        </div>
-                        <div className="flex flex-wrap gap-4">
-                          {t.aboutSection.mbti.links?.map((link) => (
-                            <a
-                              key={link.url}
-                              href={link.url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-sm text-cyan-300 underline opacity-80 hover:opacity-100"
-                            >
-                              {link.text}
-                            </a>
-                          ))}
-                        </div>
-                        <span className="text-xs text-gray-400">{t.aboutSection.mbti.disclaimer}</span>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              )}
-
-              {/* Certifications & Learning */}
-              <section className="py-20 px-6 bg-slate-900/50">
-                <div className="max-w-7xl mx-auto">
-                  <h2 className="text-4xl font-bold text-white mb-12 text-center">
-                    {t.certifications.title} <span className="text-blue-400">{t.certifications.titleHighlight}</span>
-                  </h2>
-                  
-                  {/* Professional Certifications */}
-                  <div className="mb-12">
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <Award className="text-blue-400" size={28} />
-                      {t.certifications.professional}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {certifications.map((cert, idx) => (
-                        <div key={idx} className="bg-slate-800/50 rounded-lg p-5 border border-blue-500/20 hover:border-blue-500/50 transition-all">
-                          <div className="flex justify-between items-start gap-3 mb-2">
-                            <span className="text-gray-300 font-semibold flex-1">{cert.title}</span>
-                            <span className="text-blue-400 text-sm font-medium whitespace-nowrap">{cert.date}</span>
-                          </div>
-                          <span className="inline-block bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-xs border border-blue-500/30">
-                            {cert.type}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                        </article>
+                      );
+                    })}
                   </div>
 
-                  {/* Online Courses */}
+                  <div className="reveal mt-16 mb-2 max-w-2xl">
+                    <Eyebrow>{language === 'ja' ? '大学' : 'university'}</Eyebrow>
+                    <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-fg">{t.projects.university}</h3>
+                  </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <GraduationCap className="text-cyan-400" size={28} />
-                      {t.certifications.courses}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {onlineCourses.map((course, idx) => (
-                        <div key={idx} className="bg-slate-800/50 rounded-lg p-4 border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
-                          <div className="flex justify-between items-start gap-2 mb-2">
-                            <h4 className="text-gray-300 font-medium text-sm flex-1">{course.title}</h4>
-                            <span className="text-cyan-400 text-xs whitespace-nowrap">{course.date}</span>
+                    {projects.slice(-2).map((project, idx) => {
+                      const p = project[language];
+                      return (
+                        <article key={idx} className="reveal grid gap-6 border-t border-white/10 py-8 md:grid-cols-[1fr_2.3fr] md:gap-12">
+                          <div>
+                            <span className="font-mono text-xs text-accent tnum">{p.period}</span>
+                            <p className="mt-3 text-sm font-medium text-fg">{p.role}</p>
+                            <p className="mt-1 text-xs text-faint">{p.client} · {t.projects.team} {project.teamSize[language]}</p>
                           </div>
-                          <div className="flex gap-3 text-xs">
-                            <span className="text-gray-400">{course.platform}</span>
-                            <span className="text-gray-500">•</span>
-                            <span className="text-gray-400">{course.duration}</span>
+                          <div>
+                            <h3 className="font-display text-lg font-semibold text-fg md:text-xl">{p.title}</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-muted">{p.description}</p>
+                            <div className="mt-5"><ResponsibilityList items={p.responsibilities} /></div>
+                            <div className="mt-5 flex flex-wrap gap-1.5">
+                              {project.tech.map((tech, i) => (
+                                <span key={i} className="rounded border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[0.7rem] text-muted">{tech}</span>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
+              </section>
+
+              {/* Certifications */}
+              <section className="border-t border-white/10 px-6 py-20 md:py-28">
+                <div className="mx-auto max-w-6xl">
+                  <div className="reveal mb-12 max-w-2xl">
+                    <Eyebrow>{language === 'ja' ? '資格・学習' : 'credentials'}</Eyebrow>
+                    <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-fg md:text-4xl">{t.certifications.title} {t.certifications.titleHighlight}</h2>
+                  </div>
+                  <div className="grid gap-10 lg:grid-cols-2">
+                    <div className="reveal">
+                      <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-faint">{t.certifications.professional}</h3>
+                      <ul>
+                        {certifications.map((cert, idx) => (
+                          <li key={idx} className="flex items-baseline justify-between gap-4 border-t border-white/10 py-3.5">
+                            <div>
+                              <p className="text-sm text-fg">{cert.title}</p>
+                              <p className="mt-0.5 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-faint">{cert.type}</p>
+                            </div>
+                            <span className="whitespace-nowrap font-mono text-xs text-accent tnum">{cert.date}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="reveal" style={{ transitionDelay: '80ms' }}>
+                      <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-faint">{t.certifications.courses}</h3>
+                      <ul>
+                        {onlineCourses.map((course, idx) => (
+                          <li key={idx} className="flex items-baseline justify-between gap-4 border-t border-white/10 py-3">
+                            <div>
+                              <p className="text-sm text-muted">{course.title}</p>
+                              <p className="mt-0.5 font-mono text-[0.68rem] text-faint">{course.platform} · {course.duration}</p>
+                            </div>
+                            <span className="whitespace-nowrap font-mono text-xs text-faint tnum">{course.date}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
               </section>
 
-              {/* Contact Section */}
-              <section id="contact" className="py-20 px-6">
-                <div className="max-w-4xl mx-auto">
-                  <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-white mb-6">{t.contact.title}</h2>
-                    <p className="text-xl text-gray-300 mb-8">
-                      {t.contact.description}
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                      <a href="mailto:jinoth2112@gmail.com" className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-blue-500/30">
-                        <Mail size={20} />
-                        {t.contact.emailMe}
-                      </a>
-                      {/* LinkedIn link temporarily hidden
-                      <a href="https://www.linkedin.com/in/jinothkumar" className="flex items-center gap-2 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all">
-                        <Linkedin size={20} />
-                        LinkedIn
-                      </a>
-                      */}
-                      <a href="https://github.com/jinoth" className="flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all">
-                        <Github size={20} />
-                        GitHub
-                      </a>
-                      <a href="https://www.chess.com/member/jinoth21/stats" className="flex items-center gap-2 border-2 border-lime-400 text-lime-300 hover:bg-lime-400 hover:text-slate-900 px-6 py-3 rounded-lg font-semibold transition-all" target="_blank" rel="noopener noreferrer">
-                        <ChessIcon />
-                        Chess Stats
-                      </a>
-                    </div>
+              {/* Contact */}
+              <section id="contact" className="border-t border-white/10 px-6 py-20 md:py-28">
+                <div className="mx-auto max-w-4xl">
+                  <div className="reveal text-center">
+                    <Eyebrow>{language === 'ja' ? '連絡先' : 'contact'}</Eyebrow>
+                    <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-fg text-balance md:text-5xl">{t.contact.title}</h2>
+                    <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted">{t.contact.description}</p>
                   </div>
 
-                  {/* Email Generator Form */}
-                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl p-8 border border-blue-500/20">
-                    <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <Mail className="text-blue-400" size={28} />
-                      {t.contact.generateEmail}
-                    </h3>
-                    <p className="text-gray-400 mb-6">{t.contact.formDescription}</p>
-                    
-                    <div className="space-y-4 mb-6">
+                  <div className="reveal mt-9 flex flex-wrap justify-center gap-3">
+                    <a href="mailto:jinoth2112@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-all hover:bg-accent/90 active:scale-[0.98]">
+                      <Mail size={18} />{t.contact.emailMe}
+                    </a>
+                    {/* LinkedIn temporarily hidden
+                    <a href="https://www.linkedin.com/in/jinothkumar" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-fg transition-colors hover:border-accent hover:text-accent"><Linkedin size={18} />LinkedIn</a>
+                    */}
+                    <a href="https://github.com/jinoth" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-fg transition-colors hover:border-accent hover:text-accent active:scale-[0.98]">
+                      <Github size={18} />GitHub
+                    </a>
+                    <a href="https://www.chess.com/member/jinoth21/stats" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-fg transition-colors hover:border-accent hover:text-accent active:scale-[0.98]">
+                      <ChessIcon size={18} />Chess
+                    </a>
+                  </div>
+
+                  <div className="reveal mt-12 rounded-xl border border-white/10 bg-surface/50 p-6 md:p-9">
+                    <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-fg"><Mail size={20} className="text-accent" />{t.contact.generateEmail}</h3>
+                    <p className="mt-2 text-sm text-faint">{t.contact.formDescription}</p>
+
+                    <div className="mt-6 space-y-5">
                       <div>
-                        <label className="block text-white font-semibold mb-2">{t.contact.name} <span className="text-red-400">{t.contact.required}</span></label>
+                        <label className="mb-2 block text-sm font-medium text-fg">{t.contact.name} <span className="text-accent">{t.contact.required}</span></label>
                         <input
                           type="text"
                           required
@@ -1734,18 +1289,14 @@
                           onChange={(e) => handleInputChange('name', e.target.value)}
                           aria-invalid={Boolean(fieldErrors.name)}
                           aria-describedby={fieldErrors.name ? 'name-error' : undefined}
-                          className={`w-full bg-slate-700/50 border rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 ${fieldErrors.name ? 'border-red-500/60 focus:border-red-500' : 'border-blue-500/30 focus:border-blue-500'}`}
+                          className={`w-full rounded-lg border bg-white/[0.02] px-4 py-3 text-sm text-fg placeholder-faint transition-colors focus:outline-none focus:ring-2 focus:ring-accent/25 ${fieldErrors.name ? 'border-red-500/60 focus:border-red-500/80' : 'border-white/12 focus:border-accent/60'}`}
                           placeholder={language === 'ja' ? 'お名前' : 'Your full name'}
                         />
-                        {fieldErrors.name && (
-                          <p id="name-error" className="mt-2 text-sm text-red-300" role="alert">
-                            {fieldErrors.name}
-                          </p>
-                        )}
+                        {fieldErrors.name && (<p id="name-error" className="mt-2 text-xs text-red-300" role="alert">{fieldErrors.name}</p>)}
                       </div>
 
                       <div>
-                        <label className="block text-white font-semibold mb-2">{t.contact.company} <span className="text-red-400">{t.contact.required}</span></label>
+                        <label className="mb-2 block text-sm font-medium text-fg">{t.contact.company} <span className="text-accent">{t.contact.required}</span></label>
                         <input
                           type="text"
                           required
@@ -1753,18 +1304,14 @@
                           onChange={(e) => handleInputChange('company', e.target.value)}
                           aria-invalid={Boolean(fieldErrors.company)}
                           aria-describedby={fieldErrors.company ? 'company-error' : undefined}
-                          className={`w-full bg-slate-700/50 border rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 ${fieldErrors.company ? 'border-red-500/60 focus:border-red-500' : 'border-blue-500/30 focus:border-blue-500'}`}
+                          className={`w-full rounded-lg border bg-white/[0.02] px-4 py-3 text-sm text-fg placeholder-faint transition-colors focus:outline-none focus:ring-2 focus:ring-accent/25 ${fieldErrors.company ? 'border-red-500/60 focus:border-red-500/80' : 'border-white/12 focus:border-accent/60'}`}
                           placeholder={language === 'ja' ? '会社名' : 'Your company name'}
                         />
-                        {fieldErrors.company && (
-                          <p id="company-error" className="mt-2 text-sm text-red-300" role="alert">
-                            {fieldErrors.company}
-                          </p>
-                        )}
+                        {fieldErrors.company && (<p id="company-error" className="mt-2 text-xs text-red-300" role="alert">{fieldErrors.company}</p>)}
                       </div>
 
                       <div>
-                        <label className="block text-white font-semibold mb-2">{t.contact.website} <span className="text-red-400">{t.contact.required}</span></label>
+                        <label className="mb-2 block text-sm font-medium text-fg">{t.contact.website} <span className="text-accent">{t.contact.required}</span></label>
                         <input
                           type="url"
                           required
@@ -1772,27 +1319,23 @@
                           onChange={(e) => handleInputChange('website', e.target.value)}
                           aria-invalid={Boolean(fieldErrors.website)}
                           aria-describedby={fieldErrors.website ? 'website-error' : undefined}
-                          className={`w-full bg-slate-700/50 border rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 ${fieldErrors.website ? 'border-red-500/60 focus:border-red-500' : 'border-blue-500/30 focus:border-blue-500'}`}
+                          className={`w-full rounded-lg border bg-white/[0.02] px-4 py-3 text-sm text-fg placeholder-faint transition-colors focus:outline-none focus:ring-2 focus:ring-accent/25 ${fieldErrors.website ? 'border-red-500/60 focus:border-red-500/80' : 'border-white/12 focus:border-accent/60'}`}
                           placeholder="https://www.example.com"
                         />
-                        {fieldErrors.website && (
-                          <p id="website-error" className="mt-2 text-sm text-red-300" role="alert">
-                            {fieldErrors.website}
-                          </p>
-                        )}
+                        {fieldErrors.website && (<p id="website-error" className="mt-2 text-xs text-red-300" role="alert">{fieldErrors.website}</p>)}
                       </div>
 
                       <div>
-                        <label className="block text-white font-semibold mb-2">{t.contact.positionType}</label>
-                        <div className="flex flex-wrap gap-4 text-gray-200 text-sm">
-                          <label className="flex items-center gap-2 cursor-pointer">
+                        <label className="mb-2 block text-sm font-medium text-fg">{t.contact.positionType}</label>
+                        <div className="flex flex-wrap gap-4 text-sm text-muted">
+                          <label className="flex cursor-pointer items-center gap-2">
                             <input
                               type="radio"
                               name="positionType"
                               value="permanent"
                               checked={contactForm.positionType === 'permanent'}
                               onChange={(e) => handleInputChange('positionType', e.target.value)}
-                              className="text-blue-500 focus:ring-blue-500"
+                              className="accent-accent"
                             />
                             <span>{t.contact.positionPermanent}</span>
                           </label>
@@ -1800,7 +1343,7 @@
                       </div>
 
                       <div>
-                        <label className="block text-white font-semibold mb-2">{t.contact.requirement} <span className="text-red-400">{t.contact.required}</span></label>
+                        <label className="mb-2 block text-sm font-medium text-fg">{t.contact.requirement} <span className="text-accent">{t.contact.required}</span></label>
                         <textarea
                           required
                           value={contactForm.requirement}
@@ -1808,60 +1351,40 @@
                           rows="4"
                           aria-invalid={Boolean(fieldErrors.requirement)}
                           aria-describedby={fieldErrors.requirement ? 'requirement-error' : undefined}
-                          className={`w-full bg-slate-700/50 border rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none ${fieldErrors.requirement ? 'border-red-500/60 focus:border-red-500' : 'border-blue-500/30 focus:border-blue-500'}`}
+                          className={`w-full resize-none rounded-lg border bg-white/[0.02] px-4 py-3 text-sm text-fg placeholder-faint transition-colors focus:outline-none focus:ring-2 focus:ring-accent/25 ${fieldErrors.requirement ? 'border-red-500/60 focus:border-red-500/80' : 'border-white/12 focus:border-accent/60'}`}
                           placeholder={t.contact.requirementPlaceholder}
                         />
-                        {fieldErrors.requirement && (
-                          <p id="requirement-error" className="mt-2 text-sm text-red-300" role="alert">
-                            {fieldErrors.requirement}
-                          </p>
-                        )}
+                        {fieldErrors.requirement && (<p id="requirement-error" className="mt-2 text-xs text-red-300" role="alert">{fieldErrors.requirement}</p>)}
                       </div>
                     </div>
 
                     <button
                       onClick={generateEmail}
-                      className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-[1.02] shadow-lg shadow-blue-500/30 mb-6"
+                      className="mt-7 w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-ink transition-all hover:bg-accent/90 active:scale-[0.99]"
                     >
                       {t.contact.generate}
                     </button>
 
                     {generatedEmail && (
                       <div className="mt-6" aria-live="polite">
-                        <div className="flex items-center justify-between mb-3">
-                          <label className="block text-white font-semibold">{t.contact.generatedEmail}</label>
+                        <div className="mb-3 flex items-center justify-between">
+                          <label className="text-sm font-medium text-fg">{t.contact.generatedEmail}</label>
                           <button
                             onClick={copyToClipboard}
-                            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition-all text-sm"
+                            className="inline-flex items-center gap-2 rounded-md border border-white/15 px-3 py-1.5 text-xs font-semibold text-fg transition-colors hover:border-accent hover:text-accent"
                           >
-                            {copied ? (
-                              <>
-                                <Check size={18} />
-                                {t.contact.copied}
-                              </>
-                            ) : (
-                              <>
-                                <Copy size={18} />
-                                {t.contact.copy}
-                              </>
-                            )}
+                            {copied ? (<><Check size={15} className="text-accent" />{t.contact.copied}</>) : (<><Copy size={15} />{t.contact.copy}</>)}
                           </button>
                         </div>
-                        <span className="sr-only" aria-live="polite">
-                          {copied ? (language === 'ja' ? 'メール内容をコピーしました。' : 'Email content copied.') : ''}
-                        </span>
+                        <span className="sr-only" aria-live="polite">{copied ? (language === 'ja' ? 'メール内容をコピーしました。' : 'Email content copied.') : ''}</span>
                         <textarea
                           readOnly
                           value={generatedEmail}
                           rows="12"
-                          className="w-full bg-slate-900/80 border border-cyan-500/30 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 resize-none"
+                          className="w-full resize-none rounded-lg border border-white/10 bg-black/40 px-4 py-3 font-mono text-xs leading-relaxed text-muted focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20"
                         />
-                        <p className="text-gray-400 text-sm mt-2">{t.contact.copyInstructions}</p>
-                        {copyError && (
-                          <p className="text-red-300 text-sm mt-2" role="alert" aria-live="assertive">
-                            {copyError}
-                          </p>
-                        )}
+                        <p className="mt-2 text-xs text-faint">{t.contact.copyInstructions}</p>
+                        {copyError && (<p className="mt-2 text-xs text-red-300" role="alert" aria-live="assertive">{copyError}</p>)}
                       </div>
                     )}
                   </div>
@@ -1869,18 +1392,17 @@
               </section>
 
               </main>
+
               {/* Footer */}
-              <footer className="py-8 px-6 border-t border-blue-500/20 bg-slate-900/80">
-                <div className="max-w-7xl mx-auto">
-                  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="text-gray-400 text-center md:text-left">
-                      <p className="font-semibold text-white mb-1">{t.footer.name}</p>
-                      <p className="text-sm">{t.footer.title}</p>
-                    </div>
-                    <div className="text-gray-400 text-sm text-center md:text-right">
-                      <p>{t.footer.location}</p>
-                      <p>{t.footer.rights}</p>
-                    </div>
+              <footer className="border-t border-white/10 px-6 py-10">
+                <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+                  <div className="text-center sm:text-left">
+                    <p className="font-display text-sm font-semibold text-fg">{t.footer.name}</p>
+                    <p className="mt-1 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-faint">{t.footer.title}</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-1 sm:items-end">
+                    <p className="font-mono text-xs text-muted">{t.footer.location}</p>
+                    <p className="font-mono text-[0.68rem] text-faint">{t.footer.rights}</p>
                   </div>
                 </div>
               </footer>
